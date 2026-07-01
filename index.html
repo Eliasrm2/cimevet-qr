@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- REEMPLAZA LA URL DE ABAJO POR LA DE TU TÚNEL ACTUAL -->
-    <meta http-equiv="refresh" content="0; url='https://b089l0xm-7123.brs.devtunnels.ms/'">
-    <title>Redirigiendo a Cimevet...</title>
+    <title>Cimevet - Carnet Digital</title>
+    <script>
+        // Esta es la parte dinámica
+        const URL_BASE_ACTUAL = "https://b089l0xm-7123.brs.devtunnels.ms";
+        
+        // Obtenemos el parámetro que viene en la URL del QR (ej. ?mascota=M00006)
+        const params = new URLSearchParams(window.location.search);
+        const codMascota = params.get('mascota');
+
+        if (codMascota) {
+            // Redirige al sistema real con el código correcto
+            window.location.href = `${URL_BASE_ACTUAL}/TbHistoriaClinicas/ImprimirCarnet?codMascota=${codMascota}`;
+        } else {
+            document.write("Código de mascota no encontrado.");
+        }
+    </script>
 </head>
 <body>
-    <p>Si no eres redirigido automáticamente, <a href="https://b089l0xm-7123.brs.devtunnels.ms/TbCitaMedicas">haz clic aquí</a>.</p>
+    <p>Redirigiendo al historial de tu mascota...</p>
 </body>
 </html>
