@@ -3,18 +3,18 @@
 <head>
     <title>Cimevet - Carnet Digital</title>
     <script>
-        // Esta es la parte dinámica
+        // 1. TU TÚNEL ACTUAL (Esto es lo ÚNICO que cambiarás cada día)
         const URL_BASE_ACTUAL = "https://b089l0xm-7123.brs.devtunnels.ms";
         
-        // Obtenemos el parámetro que viene en la URL del QR (ej. ?mascota=M00006)
+        // 2. Capturamos el ID de la mascota que viene en el QR
         const params = new URLSearchParams(window.location.search);
         const codMascota = params.get('mascota');
 
         if (codMascota) {
-            // Redirige al sistema real con el código correcto
-            window.location.href = `${URL_BASE_ACTUAL}/TbHistoriaClinicas/ImprimirCarnet?codMascota=${codMascota}`;
+            // 3. Redirigimos a la vista del CARNET DIGITAL con el parámetro ?id=
+            window.location.href = `${URL_BASE_ACTUAL}/TbHistoriaClinicas/CarnetDigital?id=${codMascota}`;
         } else {
-            document.write("Código de mascota no encontrado.");
+            document.write("Código de mascota no válido.");
         }
     </script>
 </head>
